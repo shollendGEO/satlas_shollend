@@ -314,7 +314,9 @@ def draw_line(start, end, lengths):
 	return points
 
 def draw_lines(segments, im=None, shape=None):
-	from eyediagram._brescount import bres_segments_count
+	# eyediagram insatll is not possible
+	print('ATTENTION! the function draw_lines has been adapted, due to dependency issues. No bres_segments_count funxtion is called')
+	#from eyediagram._brescount import bres_segments_count
 	if not shape:
 		if not im:
 			raise Exception('shape or im must be provided')
@@ -324,7 +326,10 @@ def draw_lines(segments, im=None, shape=None):
 	sticks = numpy.zeros((len(segments), 4), dtype='int32')
 	for i, segment in enumerate(segments):
 		sticks[i] = [segment.start.x, segment.start.y, segment.end.x, segment.end.y]
-	bres_segments_count(sticks, tmpim)
+
+	# this might cause mayor problems if called
+	#bres_segments_count(sticks, tmpim)
+
 	tmpim = tmpim > 0
 	if im:
 		return numpy.logical_or(im, tmpim)

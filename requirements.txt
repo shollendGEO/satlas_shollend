@@ -1,7 +1,7 @@
 scipy
-eyediagram
 numpy
 rasterio
+Cython
 scikit-image
 shapely
 tqdm
@@ -9,3 +9,4 @@ torch
 torchvision
 torchaudio
 vit_pytorch
+
